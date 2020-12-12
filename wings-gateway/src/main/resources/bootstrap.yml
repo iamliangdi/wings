@@ -1,0 +1,25 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: wings-gateway
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    gateway:
+      routes:
+        - id: WINGS-AUTHORIZATION
+          # 如果启用服务中心，采用LoadBalanceClient方式请求，uri: lb://服务名
+          uri: http://127.0.0.1:10000
+          predicates:
+            - Path=/api/v1/authorization/**
+# 日志配置
+logging:
+  file:
+    max-size: 10MB
+    max-history: 7
+    name: ./logs/gateway/gateway.log
+  level:
+    root: debug
+  pattern:
+    rolling-file-name: ./logs/gateway/%d{yyyy-MM-dd}-%i.log
