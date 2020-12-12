@@ -30,6 +30,24 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.liangdi.wings</groupId>
+                <artifactId>wings-dependency</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>wings-dependency</module>
+        <module>wings-common-entity</module>
+        <module>wings-common-utils</module>
+    </modules>
+
     <repositories>
         <repository>
             <id>central</id>
