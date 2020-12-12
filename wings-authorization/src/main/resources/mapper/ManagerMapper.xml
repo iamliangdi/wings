@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liangdi.wings.authorization.mapper.ManagerMapper">
+
+    <!--  Manager的全部字段  -->
+    <sql id="manager">
+        wings_manager.id,
+        wings_manager.username,
+        wings_manager.credentials
+    </sql>
+
+    <!--  根据username查询  -->
+    <select id="selectByUsername" resultType="Manager">
+        SELECT
+            <include refid="manager"></include>
+        FROM
+            wings_manager
+        WHERE
+            username = #{username}
+        LIMIT 1
+    </select>
+
+</mapper>

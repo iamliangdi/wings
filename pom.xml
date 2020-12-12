@@ -46,6 +46,7 @@
         <module>wings-dependency</module>
         <module>wings-common-entity</module>
         <module>wings-common-utils</module>
+        <module>wings-authorization</module>
     </modules>
 
     <repositories>
